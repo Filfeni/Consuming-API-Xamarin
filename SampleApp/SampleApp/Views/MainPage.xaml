@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleApp.MainPage"
+             Title= "Brand List">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="Refresh" Command="{Binding FetchBrandListCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView Style="{StaticResource ItemsStyle}" ItemsSource="{Binding BrandList}" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Style="{StaticResource StackLayoutStyle}">
+                                <Label Style="{StaticResource PrimaryLabel}" Text="{Binding Id}"></Label>
+                                <Label Style="{StaticResource SecondaryLabel}" Text="{Binding Name}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
