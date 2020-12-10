@@ -1,4 +1,5 @@
-﻿using SampleApp.Models;
+﻿using Refit;
+using SampleApp.Models;
 using SampleApp.Services;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace SampleApp.ViewModels
         }
         public async void FetchBrandList()
         {
-            BrandApiService service = new BrandApiService();
+            var service = RestService.For<IApiServiceRefit>("https://xamrentapi.azurewebsites.net");
             ObservableCollection<Brand> newList = await service.GetBrandAsync();
             if (newList != null)
             {
