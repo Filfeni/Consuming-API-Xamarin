@@ -5,7 +5,7 @@
              Title= "Brand List">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Text="Refresh" Command="{Binding FetchBrandListCommand}"/>
+        <ToolbarItem Order="Primary" Text="Get List" Command="{Binding FetchBrandListCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
